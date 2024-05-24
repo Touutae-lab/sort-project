@@ -1,11 +1,11 @@
 export class ArrayMerger {
     // in case of the array is already sorted, so there is no need to sort it again
     merge(collection_1: number[], collection_2: number[], collection_3: number[]): number[] {
-        const new_colelciton2: number[] = [];
+        const new_collection2: number[] = [];
         for (let i = collection_2.length - 1; i >= 0; i--) {
-            new_colelciton2.push(collection_2[i]);
+            new_collection2.push(collection_2[i]);
         }
-        collection_2 = new_colelciton2;
+        collection_2 = new_collection2;
 
 
         let result = this.mergeSortedArray(collection_1, collection_3);
@@ -30,6 +30,17 @@ export class ArrayMerger {
                 j++;
             }
         }
+
+        while (i < arr1.length) {
+            mergedArray.push(arr1[i]);
+            i++;
+        }
+
+        while (j < arr2.length) {
+            mergedArray.push(arr2[j]);
+            j++;
+        }
+        
         return mergedArray;
     }
 }
